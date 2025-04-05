@@ -20,6 +20,7 @@ p{
 }
 @layer base {
   :root {
+    --danger: #DD2C00;
     --background: 0 0% 100%;
     --foreground: 0 0% 3.9%;
     --card: 0 0% 100%;
@@ -73,5 +74,47 @@ p{
     --chart-5: 340 75% 55%
   }
 }
+
+/* Carousel page */
+.categorySlider .swiper {
+  padding-top: 70px !important;
+  overflow-x: hidden !important;
+  overflow-y: auto !important;
+}
+.categorySlider .swiper-button-prev {
+  width: 50px !important;
+  height: 50px !important;
+  border-radius: 50% !important;
+  top: 25px !important;
+  right: 70px !important;
+  left: auto !important;
+  color: #fff;
+  background-color: #C7C7C7;
+  transition: all 0.3s ease;
+}
+.categorySlider .swiper-button-next {
+  width: 50px !important;
+  height: 50px !important;
+  border-radius: 50% !important;
+  background-color: #C7C7C7;
+  color: #fff;
+  top: 25px !important;
+  right: 0 !important;
+  left: auto !important;
+  transition: all 0.3s ease;
+}
+.categorySlider .swiper-button-next:hover, .categorySlider .swiper-button-prev:hover {
+  background-color: #fff;
+  color: var(--danger);
+}
+.categorySlider .swiper-button-prev:after {
+  font-size: 20px !important;
+  font-weight: 600;
+}
+.categorySlider .swiper-button-next:after {
+  font-size: 20px !important;
+  font-weight: 600;
+}
+
 
 

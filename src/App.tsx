@@ -4,6 +4,7 @@ import Home from "./pages/home/Home";
 import TravelTips from "./pages/travel-tips/TravelTips";
 import SingleCity from "./pages/single-city/SingleCity";
 import Safety from "./pages/safety/Safety";
+import Footer from "./components/footer/Footer";
 
 function App() {
   useEffect(() => {
@@ -20,6 +21,7 @@ function App() {
   return (
     <>
       <Router>
+        
         <Routes>
           <Route path={"/"} element={<Home />} />
           <Route path={"/travel-tips"} element={<TravelTips />} />
@@ -29,6 +31,7 @@ function App() {
             <Route path="single-city" element={<SingleCity />} />
           </Route>
         </Routes>
+        <Footer />
       </Router>
     </>
   );
