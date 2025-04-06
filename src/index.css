@@ -79,7 +79,6 @@ p{
 .categorySlider .swiper {
   padding-top: 70px !important;
   overflow-x: hidden !important;
-  overflow-y: auto !important;
 }
 .categorySlider .swiper-button-prev {
   width: 50px !important;

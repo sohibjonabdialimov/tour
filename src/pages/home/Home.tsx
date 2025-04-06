@@ -2,7 +2,6 @@ import Header from "@/components/header/Header";
 import { Button } from "@/components/ui/button";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
-import "swiper/css/pagination";
 import "swiper/css/navigation";
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
 import { useNavigate } from "react-router-dom";
@@ -49,7 +48,113 @@ const data = [
     image: "/src/assets/images/hero5.webp",
   },
 ];
+const cityData = [
+  {
+    title: "Toshkent",
+    description: "Zamonaviy megapolis",
+    image:
+      "https://uzbekistan.travel/storage/app/uploads/public/677/7d4/547/thumb_4157_600_0_0_0_auto.jpeg",
+  },
+  {
+    title: "Samarqand",
+    description: "Madaniyatlar chorrahasi",
+    image:
+      "https://uzbekistan.travel/storage/app/uploads/public/677/7d3/957/thumb_4156_600_0_0_0_auto.png",
+  },
+  {
+    title: "Buxoro",
+    description: "Islom madaniyatining poytaxti",
+    image:
+      "https://uzbekistan.travel/storage/app/uploads/public/671/74c/365/thumb_3943_600_0_0_0_auto.jpg",
+  },
+  {
+    title: "Xiva",
+    description: "Turk dunyosini poytaxti",
+    image:
+      "https://uzbekistan.travel/storage/app/uploads/public/676/a5f/65e/thumb_4123_600_0_0_0_auto.jpg",
+  },
+  {
+    title: "Shahrisabz",
+    description: "Amir Temur vatani",
+    image:
+      "https://uzbekistan.travel/storage/app/uploads/public/670/e08/ea9/thumb_3928_600_0_0_0_auto.jpg",
+  },
+  {
+    title: "Mo'ynoq",
+    description: "Orol sahrosi",
+    image:
+      "https://uzbekistan.travel/storage/app/uploads/public/670/e09/78d/thumb_3929_600_0_0_0_auto.jpg",
+  },
+  {
+    title: "Zomin",
+    description: "O'zbek Shvetsariyasi",
+    image:
+      "https://uzbekistan.travel/storage/app/uploads/public/5eb/476/f7b/thumb_774_600_0_0_0_auto.jpg",
+  },
+  {
+    title: "Termiz",
+    description: "Qadimiy svilizatsiya va din markazi",
+    image:
+      "https://uzbekistan.travel/storage/app/uploads/public/668/38e/fa0/thumb_3658_600_0_0_0_auto.jpg",
+  },
+];
 
+const placesData = [
+  {
+    id: 1,
+    title: "Virtual galereyalar",
+    image:
+      "https://uzbekistan.travel/storage/app/uploads/public/67b/6ab/4b2/thumb_4640_740_0_0_0_auto.png",
+  },
+  {
+    id: 2,
+    title: "Chorsu Art-galereyalar",
+    image:
+      "https://uzbekistan.travel/storage/app/uploads/public/66b/9c1/00e/thumb_3802_740_0_0_0_auto.jpg",
+  },
+  {
+    id: 3,
+    title: "Toshkent fotosuratlar uyi",
+    image:
+      "https://uzbekistan.travel/storage/app/uploads/public/679/9f2/2fa/thumb_4391_740_0_0_0_auto.jpg",
+  },
+  {
+    id: 4,
+    title: "Qatag'on qurbonlari xotirasi muzeyi",
+    image:
+      "https://uzbekistan.travel/storage/app/uploads/public/67b/6ab/f4e/thumb_4645_740_0_0_0_auto.png",
+  },
+  {
+    id: 5,
+    title: "Marg'ilon hunarmandchilik markazi",
+    image:
+      "https://uzbekistan.travel/storage/app/uploads/public/67b/6ab/aa5/thumb_4643_740_0_0_0_auto.png",
+  },
+  {
+    id: 6,
+    title: "Mustaqillik maydoni",
+    image:
+      "https://uzbekistan.travel/storage/app/uploads/public/67b/6ab/6b6/thumb_4641_740_0_0_0_auto.png",
+  },
+  {
+    id: 7,
+    title: "Jahon otin Uyavsiy uy-muzeyi",
+    image:
+      "https://uzbekistan.travel/storage/app/uploads/public/67b/6ab/255/thumb_4639_740_0_0_0_auto.jpg",
+  },
+  {
+    id: 8,
+    title: "Yapon bog'i",
+    image:
+      "https://uzbekistan.travel/storage/app/uploads/public/614/078/c96/thumb_1894_740_0_0_0_auto.jpg",
+  },
+  {
+    id: 9,
+    title: "Erkin Vohidov memorial muzeyi",
+    image:
+      "https://uzbekistan.travel/storage/app/uploads/public/679/9f3/e17/thumb_4394_740_0_0_0_auto.jpg",
+  },
+];
 const Home = () => {
   const navigate = useNavigate();
   return (
@@ -121,7 +226,7 @@ const Home = () => {
         </Button>
       </section>
       <section className="categorySlider px-10">
-        <h1 className="text-#1F2937 text-4xl sm:font-medium font-medium">
+        <h1 className="text-#1F2937 text-[2.5rem] sm:font-medium font-medium">
           Eng yaxshi joylar
         </h1>
         <Swiper
@@ -144,31 +249,62 @@ const Home = () => {
           pagination={{
             clickable: true,
           }}
-          modules={[Autoplay, Pagination, Navigation]}
+          modules={[Autoplay, Navigation]}
           slidesPerView={1}
           navigation={true}
           loop={true}
-          className="mySwiper mt-5 sm:mt-0 rounded-2xl"
+          className="mt-5 sm:mt-0 rounded-2xl"
         >
-          {data.map((item) => {
+          {placesData.map((item) => {
             return (
-              <SwiperSlide key={item.id}>
-                <div className="autoslider_wrap">
-                  <div className="autoslider_img">
-                    <img
-                      className="w-[100%] rounded-2xl"
-                      src={`${item.image}`}
-                      alt=""
-                    />
-                    <div>
-                      <p>{item.title}</p>
-                    </div>
-                  </div>
+              <SwiperSlide
+                className="relative !h-72 rounded-2xl overflow-hidden shadow-lg group cursor-pointer"
+                key={item.id}
+              >
+                <img
+                  src={`${item.image}`}
+                  alt={item.title}
+                  className="w-full h-full object-cover transform duration-300 group-hover:scale-105"
+                />
+               <div className="absolute inset-0 bg-black/50"></div>
+
+                <div className="absolute bottom-4 text-white w-full text-2xl font-medium z-10 flex flex-col gap-0 items-center">
+                  <h2>{item.title}</h2>
                 </div>
               </SwiperSlide>
             );
           })}
         </Swiper>
+      </section>
+      <section className="px-10 py-28">
+        <h1 className="text-[2.5rem] font-medium mb-3">
+          O'zbekiston shaharlari
+        </h1>
+        <p className="text-[#6B7280] text-xl mb-8">
+          Sayyohlar uchun mashhur yo'nalish
+        </p>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+          {cityData.map((city, index) => (
+            <div
+              key={index}
+              className="relative h-80 rounded-2xl overflow-hidden shadow-lg group cursor-pointer"
+            >
+              <img
+                src={city.image}
+                alt={city.title}
+                className="w-full h-full object-cover transform duration-300 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-black/30"></div>
+
+              <div className="absolute bottom-4 text-white w-full text-2xl font-semibold z-10 flex flex-col gap-0 items-center">
+                <h2>{city.title}</h2>
+                <p className="text-[#E5E7EB] text-base rounded-xl text-center">
+                  {city.description}
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
       </section>
     </div>
   );
