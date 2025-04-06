@@ -268,7 +268,7 @@ const Home = () => {
                 />
                <div className="absolute inset-0 bg-black/50"></div>
 
-                <div className="absolute bottom-4 text-white w-full text-2xl font-medium z-10 flex flex-col gap-0 items-center">
+                <div className="absolute bottom-6 left-8 text-white w-full text-2xl font-medium z-10">
                   <h2>{item.title}</h2>
                 </div>
               </SwiperSlide>
