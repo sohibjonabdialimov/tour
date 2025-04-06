@@ -5,6 +5,7 @@ import TravelTips from "./pages/travel-tips/TravelTips";
 import SingleCity from "./pages/single-city/SingleCity";
 import Safety from "./pages/safety/Safety";
 import Footer from "./components/footer/Footer";
+import Questions from "./pages/questions/Questions";
 
 function App() {
   useEffect(() => {
@@ -26,7 +27,7 @@ function App() {
           <Route path={"/"} element={<Home />} />
           <Route path={"/travel-tips"} element={<TravelTips />} />
           <Route path="safety" element={<Safety />} />
-
+          <Route path="questions" element={<Questions />} />
           <Route path="city">
             <Route path="single-city" element={<SingleCity />} />
           </Route>
