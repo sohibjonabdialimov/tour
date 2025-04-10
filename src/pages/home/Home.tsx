@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
-import { Autoplay, Pagination, Navigation } from "swiper/modules";
+import { Autoplay, Navigation } from "swiper/modules";
 import { useNavigate } from "react-router-dom";
 
 const data = [

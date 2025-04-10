@@ -8,6 +8,7 @@ import Footer from "./components/footer/Footer";
 import Questions from "./pages/questions/Questions";
 import Tourists from "./pages/tourists/Tourists";
 import SingleTourism from "./pages/single-tourism/SingleTourism";
+import CreateCityForm from "./pages/form/CreateCityForm";
 
 function App() {
   useEffect(() => {
@@ -31,6 +32,7 @@ function App() {
           <Route path="safety" element={<Safety />} />
           <Route path="questions" element={<Questions />} />
           <Route path="tourists" element={<Tourists />} />
+          <Route path="form" element={<CreateCityForm />} />
           <Route path="tourism">
             <Route path=":id" element={<SingleTourism />} />
           </Route>

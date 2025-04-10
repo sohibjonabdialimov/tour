@@ -18,7 +18,7 @@ export const data = [
       "✔️Magaki-Attari masjidi. ",
     ],
     video: "https://www.youtube.com/embed/_CH06TjqAxg",
-    desc3:
+    tempDesc:
       "Bu yerdagi yozni issiq va qurg‘oq deb taʼriflash mumkin, shuning uchun yilning bu faslida Buxoroga sayohat qilganda o‘zingiz bilan soyabon va quyosh nuridan saqlovchi krem olishni unutmang. Buxoroda qish juda yumshoq, ammo iliq narsalarni ham eʼtibordan chetda qoldirmang.",
     giftDesc:
       "Buxoro ko‘chalarida ko‘plab turli xil esdalik do‘konlarini va ustaxonalarini topishingiz mumkin. Baʼzida barcha suvenirlar bir xil bo‘lib tuyuladi, ammo bu shunday emas! Har bir sotuvchida sizni ajablantiradigan narsa bo‘ladi! Buxoro – O‘zbekistonning to‘quv poytaxti! Agar siz zamonaviy va didli, hamda milliy kiyim-kechaklar olishni istasangiz, unda, albatta, Buxoroga tashrif buyurishingiz lozim! Do‘konlarning aksariyati Labi-Hovuz oldida va mashhur Poi Kalon ansambli yonidagi savdo toqlarda joylashgan. Tayyor kiyimlar bilan bir qatorda siz iqat matosini o‘zini ham xarid qilishingiz mumkin. Bunday matoni Armani savdo uyi o‘z kolleksiyasida ham ishlatgan. U arzon emas albatta, lekin o‘z narxiga arziydi. Buxoro gilamlari bilan ham mashhur. Gilamlarning sifati Hindiston, Pokiston va Eronnikidan kam emas va baʼzan ulardan ham yaxshiroq! Ekzotika shinavandalari uchun Buxoro maxsus mahorat bilan yasaladigan cholg‘u asboblari yoki qo‘lda yasalgan pichoqlarni taklif qilishi mumkin.",
