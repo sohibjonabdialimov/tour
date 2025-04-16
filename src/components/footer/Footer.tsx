@@ -9,7 +9,7 @@ const data = [
       {
         id: 1,
         title: "Ko‘p beriladigan savollar",
-        link: "/",
+        link: "/questions",
       },  
       {
         id: 2,
@@ -106,7 +106,7 @@ const Footer = () => {
             <div key={item.id}>
               <h3 className="text-white text-[28px] leading-normal mb-8 font-medium">{item.title}</h3>
               {item.children.map((child) => (
-                <Link className="hover:text-white text-lg block leading-[1.2] mb-4 font-normal text-lightColor transition duration-300" to={child.link}>
+                <Link key={child.id} className="hover:text-white text-lg block leading-[1.2] mb-4 font-normal text-lightColor transition duration-300" to={child.link}>
                   {child.title}
                 </Link>
               ))}

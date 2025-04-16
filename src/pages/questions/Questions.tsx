@@ -190,32 +190,68 @@ export default function Questions() {
           </div>
         </div>
       </section>
-      <div className="pt-[80px] pb-[60px] w-[90%] mx-auto flex flex-col gap-16">
-        {questions.map((question) => (
-          <div className="">
-            <h2 className="text-[28px] leading-[1.2] font-medium mb-5">
-              {question.title}
-            </h2>
-            <Accordion type="multiple">
-              {question.children.map((child) => (
-                <AccordionItem value={child.id.toString()}>
-                  <div className="flex items-center gap-4">
-                    <MessageCircleWarning className="text-red-600 w-8 h-8" />
+      <div className="pt-[80px] pb-[100px] w-[90%] mx-auto flex gap-16">
+        <div className="w-[calc(100%-350px)] flex flex-col gap-16">
+          {questions.map((question) => (
+            <div className="">
+              <h2 className="text-[28px] leading-[1.2] font-medium mb-5">
+                {question.title}
+              </h2>
+              <Accordion type="multiple">
+                {question.children.map((child) => (
+                  <AccordionItem value={child.id.toString()}>
+                    <div className="flex items-start gap-4">
+                      <MessageCircleWarning className="text-red-600 w-8 h-8 mt-5" />
 
-                    <div className="w-full">
-                      <AccordionTrigger className="text-left font-semibold text-xl font-sans">
-                        {child.title}
-                      </AccordionTrigger>
-                      <AccordionContent className="text-[#4A4A4A] text-base font-sans">
-                        {child.description}
-                      </AccordionContent>
+                      <div className="w-full">
+                        <AccordionTrigger className="text-left font-semibold text-xl font-sans">
+                          {child.title}
+                        </AccordionTrigger>
+                        <AccordionContent className="text-[#4A4A4A] text-base font-sans">
+                          {child.description}
+                        </AccordionContent>
+                      </div>
                     </div>
-                  </div>
-                </AccordionItem>
-              ))}
-            </Accordion>
-          </div>
-        ))}
+                  </AccordionItem>
+                ))}
+              </Accordion>
+            </div>
+          ))}
+        </div>
+        <div className="sticky top-5 right-0 w-[350px] bg-[#F7F7F7] broder-[#dcdcdc] border rounded-[10px] p-7 pl-12 h-[30rem]">
+          <ul className="flex flex-col gap-4 list-disc marker:text-red-600">
+            <li className="text-lg font-medium">
+              <p>Ko‘p beriladigan savollar</p>
+            </li>
+            <li className="text-lg font-medium">
+              <p>Pasport</p>
+            </li>
+            <li className="text-lg font-medium">
+              <p>Viza</p>
+            </li>
+            <li className="text-lg font-medium">
+              <p>Parvoz</p>
+            </li>
+            <li className="text-lg font-medium">
+              <p>Ro‘yxatdan o‘tish</p>
+            </li>
+            <li className="text-lg font-medium">
+              <p>Sayohat</p>
+            </li>
+            <li className="text-lg font-medium">
+              <p>Aloqa</p>
+            </li>
+            <li className="text-lg font-medium">
+              <p>Sug‘urta</p>
+            </li>
+            <li className="text-lg font-medium">
+              <p>Joylashish</p>
+            </li>
+            <li className="text-lg font-medium">
+              <p>Chipta sotib olish</p>
+            </li>
+          </ul>
+        </div>
       </div>
     </>
   );

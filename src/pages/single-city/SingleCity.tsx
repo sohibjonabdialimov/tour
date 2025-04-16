@@ -1,5 +1,6 @@
 import Header from "@/components/header/Header";
 import { CityData } from "@/types";
+import { useEffect } from "react";
 
 const data: CityData = {
   id: 1,
@@ -59,6 +60,9 @@ const data: CityData = {
 };
 
 const SingleCity = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <>
       <section>
