@@ -13,16 +13,49 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { useState } from "react";
 import { MapPin, Phone, Mail, Clock } from "lucide-react";
+import { toast } from "@/hooks/use-toast";
 
 const Contact = () => {
   const [open, setOpen] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const formData = new FormData(e.target as HTMLFormElement);
-    const data = Object.fromEntries(formData);
-    console.log(data);
-    console.log("Form submitted");
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+
+    const data = {
+      name: formData.get("name") as string,
+      email: formData.get("email") as string,
+      phone: formData.get("phone") as string,
+      message: formData.get("message") as string,
+    };
+
+    const response = await fetch(
+      `${import.meta.env.VITE_API_URL}/api/feedback`,
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      }
+    );
+    const resData = await response.json();
+
+
+    if (resData.data.success) {
+      console.log("Ariza yuborildi");
+      toast({
+        title: "Ariza yuborildi",
+        description: "Biz siz bilan tez orada bog'lanishadi",
+      });
+      form.reset();
+    }else{
+      toast({
+        title: "Xatolik",
+        description: "Iltimos qaytadan uruning",
+      });
+    }
   };
   return (
     <>
@@ -101,6 +134,7 @@ const Contact = () => {
                   </Label>
                   <Input
                     id="name"
+                    type="text"
                     name="name"
                     placeholder="Ismingizni kiriting..."
                     className="col-span-3 h-[42px] text-lg"

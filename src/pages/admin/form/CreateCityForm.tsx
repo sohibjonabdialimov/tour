@@ -92,7 +92,7 @@ export default function CreateCityForm() {
       <h2 className="text-2xl font-bold text-center mb-6">Create City</h2>
 
       {[
-        { label: "City Name", name: "cityName" },
+        { label: "Place Name", name: "cityName" },
         { label: "Description", name: "desc" },
         { label: "Background", name: "bg" },
         { label: "Hero Title", name: "heroTitle" },
