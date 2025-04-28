@@ -33,7 +33,7 @@ export default function CreateCityForm() {
   });
 
   const handlePopularArrChange = (arr: string[]) => {
-    setFormData(prev => ({ ...prev, popularArr: arr }));
+    setFormData(prev => ({ ...prev, arr }));
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -94,7 +94,7 @@ export default function CreateCityForm() {
       {[
         { label: "Place Name", name: "cityName" },
         { label: "Description", name: "desc" },
-        { label: "Background", name: "bg" },
+        { label: "Background Image Url", name: "bg" },
         { label: "Hero Title", name: "heroTitle" },
         { label: "Hero Description", name: "heroDesc" },
         { label: "Popular Description", name: "popularDesc" },

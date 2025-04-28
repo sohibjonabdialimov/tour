@@ -10,7 +10,6 @@ import { toast } from "@/hooks/use-toast";
 export default function BookingDetail() {
   const { id } = useParams();
   const navigate = useNavigate();
-
   const [booking, setBooking] = useState<BookingType | null>(null);
 
   useEffect(() => {

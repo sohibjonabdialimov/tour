@@ -5,7 +5,8 @@ import "swiper/css";
 import "swiper/css/navigation";
 import { Autoplay, Navigation } from "swiper/modules";
 import { useNavigate } from "react-router-dom";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import { CityDataProps } from "@/types";
 
 const data = [
   {
@@ -49,64 +50,64 @@ const data = [
     image: "/src/assets/images/hero5.webp",
   },
 ];
-const cityData = [
-  {
-    id: 1,
-    title: "Toshkent",
-    description: "Zamonaviy megapolis",
-    image:
-      "https://uzbekistan.travel/storage/app/uploads/public/677/7d4/547/thumb_4157_600_0_0_0_auto.jpeg",
-  },
-  {
-    id: 2,
-    title: "Samarqand",
-    description: "Madaniyatlar chorrahasi",
-    image:
-      "https://uzbekistan.travel/storage/app/uploads/public/677/7d3/957/thumb_4156_600_0_0_0_auto.png",
-  },
-  {
-    id: 3,
-    title: "Buxoro",
-    description: "Islom madaniyatining poytaxti",
-    image:
-      "https://uzbekistan.travel/storage/app/uploads/public/671/74c/365/thumb_3943_600_0_0_0_auto.jpg",
-  },
-  {
-    id: 4,
-    title: "Xiva",
-    description: "Turk dunyosini poytaxti",
-    image:
-      "https://uzbekistan.travel/storage/app/uploads/public/676/a5f/65e/thumb_4123_600_0_0_0_auto.jpg",
-  },
-  {
-    id: 5,
-    title: "Shahrisabz",
-    description: "Amir Temur vatani",
-    image:
-      "https://uzbekistan.travel/storage/app/uploads/public/670/e08/ea9/thumb_3928_600_0_0_0_auto.jpg",
-  },
-  {
-    id: 6,
-    title: "Mo'ynoq",
-    description: "Orol sahrosi",
-    image:
-      "https://uzbekistan.travel/storage/app/uploads/public/670/e09/78d/thumb_3929_600_0_0_0_auto.jpg",
-  },
-  {
-    id: 7,
-    title: "Zomin",
-    description: "O'zbek Shvetsariyasi",
-    image:
-      "https://uzbekistan.travel/storage/app/uploads/public/5eb/476/f7b/thumb_774_600_0_0_0_auto.jpg",
-  },
-  {
-    id: 8,
-    title: "Termiz",
-    description: "Qadimiy svilizatsiya va din markazi",
-    image:
-      "https://uzbekistan.travel/storage/app/uploads/public/668/38e/fa0/thumb_3658_600_0_0_0_auto.jpg",
-  },
-];
+
+//   {
+//     id: 1,
+//     title: "Toshkent",
+//     description: "Zamonaviy megapolis",
+//     image:
+//       "https://uzbekistan.travel/storage/app/uploads/public/677/7d4/547/thumb_4157_600_0_0_0_auto.jpeg",
+//   },
+//   {
+//     id: 2,
+//     title: "Samarqand",
+//     description: "Madaniyatlar chorrahasi",
+//     image:
+//       "https://uzbekistan.travel/storage/app/uploads/public/677/7d3/957/thumb_4156_600_0_0_0_auto.png",
+//   },
+//   {
+//     id: 3,
+//     title: "Buxoro",
+//     description: "Islom madaniyatining poytaxti",
+//     image:
+//       "https://uzbekistan.travel/storage/app/uploads/public/671/74c/365/thumb_3943_600_0_0_0_auto.jpg",
+//   },
+//   {
+//     id: 4,
+//     title: "Xiva",
+//     description: "Turk dunyosini poytaxti",
+//     image:
+//       "https://uzbekistan.travel/storage/app/uploads/public/676/a5f/65e/thumb_4123_600_0_0_0_auto.jpg",
+//   },
+//   {
+//     id: 5,
+//     title: "Shahrisabz",
+//     description: "Amir Temur vatani",
+//     image:
+//       "https://uzbekistan.travel/storage/app/uploads/public/670/e08/ea9/thumb_3928_600_0_0_0_auto.jpg",
+//   },
+//   {
+//     id: 6,
+//     title: "Mo'ynoq",
+//     description: "Orol sahrosi",
+//     image:
+//       "https://uzbekistan.travel/storage/app/uploads/public/670/e09/78d/thumb_3929_600_0_0_0_auto.jpg",
+//   },
+//   {
+//     id: 7,
+//     title: "Zomin",
+//     description: "O'zbek Shvetsariyasi",
+//     image:
+//       "https://uzbekistan.travel/storage/app/uploads/public/5eb/476/f7b/thumb_774_600_0_0_0_auto.jpg",
+//   },
+//   {
+//     id: 8,
+//     title: "Termiz",
+//     description: "Qadimiy svilizatsiya va din markazi",
+//     image:
+//       "https://uzbekistan.travel/storage/app/uploads/public/668/38e/fa0/thumb_3658_600_0_0_0_auto.jpg",
+//   },
+// ];
 
 const placesData = [
   {
@@ -166,8 +167,18 @@ const placesData = [
 ];
 const Home = () => {
   const navigate = useNavigate();
+  const [city, setCity] = useState<CityDataProps[]>([]);
   useEffect(() => {
-    window.scrollTo(0, 0);
+    const fetchData = async () => {
+      const response = await fetch(
+        `${import.meta.env.VITE_API_URL}/api/cities`
+      );
+      const data = await response.json();
+      setCity(data);
+      console.log(data);
+    };
+
+    fetchData();
   }, []);
   return (
     <div>
@@ -180,8 +191,6 @@ const Home = () => {
             delay: 4000,
             disableOnInteraction: false,
           }}
-          onSlideChange={() => console.log("Slide changed")}
-          onSwiper={(swiper) => console.log(swiper)}
           loop={true}
         >
           {data.map((item) => (
@@ -278,7 +287,7 @@ const Home = () => {
                   alt={item.title}
                   className="w-full h-full object-cover transform duration-300 group-hover:scale-105"
                 />
-               <div className="absolute inset-0 bg-black/50"></div>
+                <div className="absolute inset-0 bg-black/50"></div>
 
                 <div className="absolute bottom-6 left-8 text-white w-full text-2xl font-medium z-10">
                   <h2>{item.title}</h2>
@@ -296,23 +305,23 @@ const Home = () => {
           Sayyohlar uchun mashhur yo'nalish
         </p>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
-          {cityData.map((city, index) => (
+          {city?.map((city, index) => (
             <div
-              onClick={() => navigate(`/city/${city.id}`)}
+              onClick={() => navigate(`/city/${city._id}`)}
               key={index}
               className="relative h-80 rounded-2xl overflow-hidden shadow-lg group cursor-pointer"
             >
               <img
-                src={city.image}
-                alt={city.title}
+                src={`${import.meta.env.VITE_API_URL}/${city.heroImg}`}
+                alt={city.cityName}
                 className="w-full h-full object-cover transform duration-300 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-black/30"></div>
 
               <div className="absolute bottom-4 text-white w-full text-2xl font-semibold z-10 flex flex-col gap-0 items-center">
-                <h2>{city.title}</h2>
+                <h2>{city.cityName}</h2>
                 <p className="text-[#E5E7EB] text-base rounded-xl text-center">
-                  {city.description}
+                  {city.desc}
                 </p>
               </div>
             </div>
