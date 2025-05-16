@@ -41,3 +41,18 @@ export type BookingType = {
   email: string;
   message: string;
 };
+
+export type BuildingProps = {
+  id: number;
+  latitude: number;
+  longitude: number;
+  name: string;
+  value: string;
+  info: {
+    name: string;
+    price: number;
+    image: string;
+    url360: string;
+    phone: string;
+  };
+}

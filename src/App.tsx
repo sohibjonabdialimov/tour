@@ -18,6 +18,7 @@ import { AuthProvider } from "./context/AuthContext ";
 import DashboardLayout from "./components/layout/DashboardLayout";
 import CityListDetail from "./pages/admin/city-list-detail/CityListDetail";
 import { Toaster } from "./components/ui/toaster";
+import Hotel from "./pages/hotel/Hotel";
 
 function App() {
   useEffect(() => {
@@ -44,6 +45,7 @@ function App() {
               <Route path="services" element={<Services />} />
               <Route path="contact" element={<Contact />} />
               <Route path="tourism" element={<SingleTourism />} />
+              <Route path="hotel" element={<Hotel />} />
               <Route path="city">
                 <Route path=":id" element={<SingleCity />} />
               </Route>
