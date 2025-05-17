@@ -1,11 +1,13 @@
 import Header from "@/components/header/Header";
+import { Button } from "@/components/ui/button";
 import { CityDataProps } from "@/types";
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 const SingleCity = () => {
   const { id } = useParams();
   const [city, setCity] = useState<CityDataProps | null>(null);
+  const navigate = useNavigate();
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -20,8 +22,6 @@ const SingleCity = () => {
     };
     fetchCity();
   }, [id]);
-
-  console.log(city);
 
   return (
     <>
@@ -79,6 +79,7 @@ const SingleCity = () => {
             <iframe
               width={940}
               height={480}
+              
               src={city?.videoUrl}
               title="Cities of Uzbekistan - Bukhara"
               frameBorder={0}
@@ -177,8 +178,8 @@ const SingleCity = () => {
             </div>
           </div>
         </div>
-        <div className="sticky top-5 right-0 w-[350px] bg-[#F7F7F7] broder-[#dcdcdc] border rounded-[10px] p-7 pl-12 h-[75vh]">
-          <ul className="flex flex-col gap-4 list-disc marker:text-red-600">
+        <div className="sticky top-5 right-0 w-[350px] bg-[#F7F7F7] broder-[#dcdcdc] border rounded-[10px] p-7  h-[80vh]">
+          <ul className="flex flex-col gap-4 list-disc marker:text-red-600 pl-5">
             <li className="text-lg font-medium">
               <p>Shahar haqida</p>
             </li>
@@ -213,6 +214,9 @@ const SingleCity = () => {
               <p>Hudud</p>
             </li>
           </ul>
+          <div className="w-full mt-6">
+            <Button onClick={() => navigate(`/hotel/${id}`)} className="w-full">Mehmonxonalar ro'yxati</Button>
+          </div>
         </div>
       </div>
     </>

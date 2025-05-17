@@ -46,6 +46,7 @@ function App() {
               <Route path="contact" element={<Contact />} />
               <Route path="tourism" element={<SingleTourism />} />
               <Route path="hotel" element={<Hotel />} />
+              <Route path="hotel/:id" element={<Hotel />} />
               <Route path="city">
                 <Route path=":id" element={<SingleCity />} />
               </Route>

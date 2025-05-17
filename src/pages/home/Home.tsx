@@ -51,64 +51,6 @@ const data = [
   },
 ];
 
-//   {
-//     id: 1,
-//     title: "Toshkent",
-//     description: "Zamonaviy megapolis",
-//     image:
-//       "https://uzbekistan.travel/storage/app/uploads/public/677/7d4/547/thumb_4157_600_0_0_0_auto.jpeg",
-//   },
-//   {
-//     id: 2,
-//     title: "Samarqand",
-//     description: "Madaniyatlar chorrahasi",
-//     image:
-//       "https://uzbekistan.travel/storage/app/uploads/public/677/7d3/957/thumb_4156_600_0_0_0_auto.png",
-//   },
-//   {
-//     id: 3,
-//     title: "Buxoro",
-//     description: "Islom madaniyatining poytaxti",
-//     image:
-//       "https://uzbekistan.travel/storage/app/uploads/public/671/74c/365/thumb_3943_600_0_0_0_auto.jpg",
-//   },
-//   {
-//     id: 4,
-//     title: "Xiva",
-//     description: "Turk dunyosini poytaxti",
-//     image:
-//       "https://uzbekistan.travel/storage/app/uploads/public/676/a5f/65e/thumb_4123_600_0_0_0_auto.jpg",
-//   },
-//   {
-//     id: 5,
-//     title: "Shahrisabz",
-//     description: "Amir Temur vatani",
-//     image:
-//       "https://uzbekistan.travel/storage/app/uploads/public/670/e08/ea9/thumb_3928_600_0_0_0_auto.jpg",
-//   },
-//   {
-//     id: 6,
-//     title: "Mo'ynoq",
-//     description: "Orol sahrosi",
-//     image:
-//       "https://uzbekistan.travel/storage/app/uploads/public/670/e09/78d/thumb_3929_600_0_0_0_auto.jpg",
-//   },
-//   {
-//     id: 7,
-//     title: "Zomin",
-//     description: "O'zbek Shvetsariyasi",
-//     image:
-//       "https://uzbekistan.travel/storage/app/uploads/public/5eb/476/f7b/thumb_774_600_0_0_0_auto.jpg",
-//   },
-//   {
-//     id: 8,
-//     title: "Termiz",
-//     description: "Qadimiy svilizatsiya va din markazi",
-//     image:
-//       "https://uzbekistan.travel/storage/app/uploads/public/668/38e/fa0/thumb_3658_600_0_0_0_auto.jpg",
-//   },
-// ];
-
 const placesData = [
   {
     id: 1,

@@ -52,15 +52,15 @@ export default function Booking() {
 
   return (
     <div className="p-6">
-      <h2 className="text-2xl font-bold mb-4">Booking Requests</h2>
+      <h2 className="text-2xl font-bold mb-4">Buyurtmalar</h2>
       <Table>
         <TableHeader>
           <TableRow>
-            <TableHead>Name</TableHead>
-            <TableHead>Phone</TableHead>
+            <TableHead>Ism</TableHead>
+            <TableHead>Telefon</TableHead>
             <TableHead>Email</TableHead>
-            <TableHead>Message</TableHead>
-            <TableHead className="text-right">Actions</TableHead>
+            <TableHead>Xabar</TableHead>
+            <TableHead className="text-right">O'chirish</TableHead>
           </TableRow>
         </TableHeader>
         <TableBody>

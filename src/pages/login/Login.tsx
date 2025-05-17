@@ -21,7 +21,7 @@ export default function LoginPage() {
     setError("");
     try {
       await new Promise((resolve) => setTimeout(resolve, 1500));
-      if (email === "user@example.com" && password === "password") {
+      if (email === "user" && password === "1234") {
         navigate("/admin");
         setIsLoggedIn(true);
         localStorage.setItem("isLoggedIn", "true");

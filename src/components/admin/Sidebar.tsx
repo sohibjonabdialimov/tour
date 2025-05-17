@@ -34,7 +34,7 @@ const Sidebar = () => {
               </div>
 
               <span className="text-textColor font-semibold text-base">
-                Create Place
+                Shahar yaratish
               </span>
             </NavLink>
             <NavLink
@@ -53,7 +53,7 @@ const Sidebar = () => {
               </div>
 
               <span className="text-textColor font-semibold text-base">
-                City List
+                Shaharlar ro'yxati
               </span>
             </NavLink>
             <NavLink
@@ -72,7 +72,7 @@ const Sidebar = () => {
               </div>
 
               <span className="text-textColor font-semibold text-base">
-                Booking
+                Buyurtmalar
               </span>
             </NavLink>
 
@@ -92,7 +92,7 @@ const Sidebar = () => {
               </div>
 
               <span className="text-textColor font-semibold text-base">
-                Main Page
+                Asosiy sahifa
               </span>
             </NavLink>
           </div>
