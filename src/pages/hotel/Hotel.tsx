@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import { buildingList } from "@/data/hotel";
 import { BuildingProps } from "@/types";
+import { formatPrice } from "@/utils/formatPrice";
 
 export default function Hotel() {
   const { id } = useParams();
@@ -69,7 +70,7 @@ export default function Hotel() {
                   {currentLocation.name}
                 </h1>
                 <p className="text-xs text-[#555]">
-                  {currentLocation.info.price}
+                  {formatPrice(currentLocation.info.price)} so'm
                 </p>
                 <p className="text-xs text-[#555]">
                   {currentLocation.info.name}
